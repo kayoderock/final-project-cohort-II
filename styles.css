@@ -1,0 +1,87 @@
+
+body {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+}
+
+.slide {
+  margin: 40px auto;
+  width: 75%;
+  height: fit-content;
+
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.slide__image {
+  height: 750px;
+  object-fit: cover;
+  object-position: top right;
+
+  border-radius: 24px;
+
+  width: 100%;
+  object-position: top;
+  display: block;
+  margin: 0 auto;
+
+  /* Pushes the edges outward by 10% on all sides, zooming the image out */
+  object-view-box: inset(12% 0% 0% 0%);
+}
+
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  /* Hides the text when it goes outside the box */
+  white-space: nowrap;
+  /* Prevents the text from wrapping to a new line */
+  /* background-color: #f1f1f1; */
+  padding: 10px 0;
+}
+
+.marquee-text {
+  /* Two identical copies side by side; sliding by half (one copy) loops seamlessly */
+  display: flex;
+  width: max-content;
+  font-size: 350px;
+  font-weight: 700;
+  color: #039578;
+  animation: marquee 12s linear infinite;
+}
+
+.marquee-text>span {
+  /* Space between the end of one copy and the start of the next */
+  padding-right: 0.5em;
+}
+
+.sub-text {
+  font-size: 30px;
+  font-weight: 500;
+  width: fit-content;
+  margin: auto;
+  color: #039578;
+}
+
+/* The animation rule that moves the text */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.sponsor-container>img {
+  height: 250px;
+  align-items: center;
+}
+
+.sponsor-container>img:nth-child(3) {
+  margin-left: 52px;
+}
+  

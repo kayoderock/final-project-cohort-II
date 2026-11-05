@@ -1,0 +1,328 @@
+:root {
+      --gold: #e5b65c;
+      --gold-light: #ffdfa0;
+      --navy: #07111f;
+      --navy-light: #101f32;
+      --white: #ffffff;
+      --muted: #aebbc9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--white);
+      font-family: "Gabarito", sans-serif;
+
+      background:
+        radial-gradient(
+          ellipse at 50% 30%,
+          rgba(37, 65, 94, 0.55),
+          transparent 60%
+        ),
+        radial-gradient(
+          circle at 5% 10%,
+          rgba(229, 182, 92, 0.12),
+          transparent 25%
+        ),
+        linear-gradient(
+          135deg,
+          #050a12,
+          #0d1a2a 45%,
+          #07101c
+        );
+
+      position: relative;
+    }
+
+    /* Decorative gold lights */
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -180px;
+      left: -150px;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(229, 182, 92, 0.25);
+      border-radius: 50%;
+      box-shadow:
+        0 0 40px rgba(229, 182, 92, 0.04),
+        inset 0 0 40px rgba(229, 182, 92, 0.03);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      right: -180px;
+      bottom: -200px;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(229, 182, 92, 0.2);
+      border-radius: 50%;
+      box-shadow:
+        0 0 60px rgba(229, 182, 92, 0.04),
+        inset 0 0 60px rgba(229, 182, 92, 0.03);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ==============================
+       ORIGINAL NAVIGATION BAR
+    ============================== */
+
+    .navbar {
+      position: relative;
+      z-index: 100;
+      margin: 24px auto 0;
+      width: 92%;
+      padding: 10px;
+
+      background: rgba(5, 14, 25, 0.88);
+      border: 1px solid rgba(229, 182, 92, 0.65);
+      border-radius: 17px;
+
+      box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+      backdrop-filter: blur(18px);
+    }
+
+    .navbar-brand {
+      color: var(--gold-light) !important;
+      font-family: "Newsreader", serif;
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-brand:hover {
+      color: var(--gold) !important;
+    }
+
+    .nav-link {
+      color: #f1f3f6 !important;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--gold-light) !important;
+    }
+
+    .navbar-toggler {
+      border: 1px solid rgba(229, 182, 92, 0.7);
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 3px rgba(229, 182, 92, 0.15);
+    }
+
+    .navbar-toggler-icon {
+      filter: sepia(1) saturate(3);
+    }
+
+    /* Search field */
+
+    .form-control {
+      color: white;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(229, 182, 92, 0.35);
+      border-radius: 30px;
+      padding: 10px 17px;
+    }
+
+    .form-control::placeholder {
+      color: #aab6c5;
+    }
+
+    .form-control:focus {
+      color: white;
+      background: rgba(255, 255, 255, 0.07);
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(229, 182, 92, 0.12);
+    }
+
+    /* ==============================
+       STUDENTS SECTION
+    ============================== */
+
+    #picture_slide {
+      width: 100%;
+      padding: 65px 20px 70px;
+    }
+
+    .students-heading {
+      text-align: center;
+      margin-bottom: 35px;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    .students-label {
+      display: inline-block;
+      margin-bottom: 17px;
+      padding: 8px 18px;
+      margin-top: 10px;
+
+      color: var(--gold-light);
+      background: rgba(229, 182, 92, 0.08);
+      border: 1px solid rgba(229, 182, 92, 0.45);
+      border-radius: 30px;
+
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .students-heading h1 {
+      margin: 0 0 12px;
+      font-family: "Newsreader", serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .students-heading h1 span {
+      color: var(--gold);
+    }
+
+    .students-heading p {
+      max-width: 550px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+   /* Student Images */
+   #picture_repo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+
+    width: 1200px;
+    margin: auto;
+   }
+
+    .picture_repo__student {
+      max-width: 320px;
+      flex: '1 1 24rem'
+    }
+
+    /* Hide unused custom icon elements if supplied by
+       the original Bootstrap extension. */
+
+    .carousel-icon-pause,
+    .carousel-icon-play,
+    .carousel-icon-prev,
+    .carousel-icon-next {
+      display: inline-block;
+    }
+
+    /* ==============================
+       ANIMATIONS
+    ============================== */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ==============================
+       RESPONSIVE DESIGN
+    ============================== */
+
+    @media (max-width: 768px) {
+      .navbar {
+        width: 94%;
+        margin-top: 14px;
+        padding: 13px 15px;
+      }
+
+      .navbar-brand {
+        font-size: 22px;
+      }
+
+      #picture_slide {
+        padding: 45px 14px 50px;
+      }
+
+      .students-heading {
+        margin-bottom: 25px;
+      }
+
+      .students-heading p {
+        font-size: 14px;
+      }
+
+      .slide {
+        padding: 5px;
+        border-radius: 15px;
+      }
+
+      .carousel {
+        border-radius: 11px;
+      }
+
+      .slide__image {
+        height: 420px;
+        border-radius: 10px;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .students-heading h1 {
+        font-size: 38px;
+      }
+
+      .slide__image {
+        height: 320px;
+      }
+
+      .carousel-controls {
+        gap: 8px;
+        margin-top: 15px;
+      }
+
+      .btn-icon {
+        width: 39px;
+        height: 39px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
