@@ -155,13 +155,66 @@
       box-shadow: 0 0 15px rgba(229, 182, 92, 0.12);
     }
 
+     /* =========================
+       Vocation & Classes
+    ========================= */
+
+    .voc_classes {
+      padding: 5px 7% 60px;
+      background: var(--cream);
+      color: var(--dark);
+      text-align: center;
+      width: 50%;
+      margin: auto;
+    }
+
+    .voc_classes h2 {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 38px;
+      /* color: #68756b; */
+
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .voc_classes-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: clamp(45px, 8vw, 55px);
+    }
+
+    .voc_classes-container img {
+      display: block;
+      width: auto;
+      cursor: pointer;
+      max-width: 190px;
+      height: 58px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.8;
+      transition: filter 0.3s ease, opacity 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .voc_classes-container img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.5) translateY(-4px);
+    }
+
+
     /* ==============================
        STUDENTS SECTION
     ============================== */
 
     #picture_slide {
       width: 100%;
-      padding: 65px 20px 70px;
+      padding-bottom: 40px;
     }
 
     .students-heading {
@@ -207,28 +260,17 @@
       line-height: 1.8;
     }
 
-    /* ==============================
-       IMAGE SLIDESHOW FRAME
-    ============================== */
+    /* IMAGE SLIDESHOW FRAME */
 
     .slide {
       position: relative;
-      width: min(100%, 1050px);
+      width: min(100%, 1200px);
       margin: 0 auto;
       padding: 7px;
 
       overflow: hidden;
       border: 1px solid var(--gold);
       border-radius: 22px;
-
-      background: linear-gradient(
-        135deg,
-        #805c23,
-        #f7d58b,
-        #6d4a18,
-        #ffdfa0,
-        #53390f
-      );
 
       box-shadow:
         0 0 18px rgba(229, 182, 92, 0.22),
@@ -257,6 +299,20 @@
 
       border-radius: 15px;
       transition: transform 0.8s ease;
+
+      height: 750px;
+      object-fit: cover;
+      object-position: top right;
+
+      border-radius: 24px;
+
+      width: 100%;
+      object-position: top;
+      display: block;
+      margin: 0 auto;
+
+      /* Pushes the edges outward by 10% on all sides, zooming the image out */
+      object-view-box: inset(12% 0% 0% 0%);
     }
 
     .carousel-item.active .slide__image {
