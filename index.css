@@ -558,6 +558,7 @@
     .sponsor-container img {
       display: block;
       width: auto;
+      cursor: pointer;
       max-width: 190px;
       height: 58px;
       object-fit: contain;
