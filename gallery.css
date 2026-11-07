@@ -160,11 +160,11 @@
     ========================= */
 
     .voc_classes {
-      padding: 5px 7% 60px;
+      padding: 5px 5% 60px;
       background: var(--cream);
       color: var(--dark);
       text-align: center;
-      width: 50%;
+      width: 60%;
       margin: auto;
     }
 
@@ -173,7 +173,6 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 38px;
-      /* color: #68756b; */
 
       color: var(--muted);
       font-size: 15px;
@@ -184,8 +183,21 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
       gap: clamp(45px, 8vw, 55px);
+    }
+
+    .voc_classes-container div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .voc_classes-container div label {
+      opacity: 0;
+      color: var(--cream);
     }
 
     .voc_classes-container img {
@@ -201,10 +213,14 @@
         transform 0.3s ease;
     }
 
-    .voc_classes-container img:hover {
+    .voc_classes-container div:hover img {
       filter: grayscale(0%);
       opacity: 1;
-      transform: scale(1.5) translateY(-4px);
+      transform: scale(1.6) translateY(-4px);
+    }
+
+    .voc_classes-container div:hover label {
+      opacity: 1;
     }
 
 
