@@ -198,6 +198,7 @@
     .voc_classes-container div label {
       opacity: 0;
       color: var(--cream);
+      white-space: nowrap;
     }
 
     .voc_classes-container img {
